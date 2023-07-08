@@ -4,21 +4,21 @@ import { useState } from "react";
 
 function filterData(searchInput, restaurantlist) {
   const filterData = restaurantlist.filter((restaurant) =>
-    rname.includes(searchInput)
+    restaurant.rname.includes(searchInput)
   );
   return filterData;
 }
 
 const Body = () => {
 
-   const [restaurantlist, setrestList] = useState(restList);
+   const [restaurantlist, setrestaurantlist] = useState(restList);
    const [searchInput, setsearchInput] = useState();
   return (
     <>
       { <div className="Search-container">
         <input
           type="text"
-          className="search-input"
+          className="search-input"  
           placeholder="Search"
           value={searchInput}
           onChange={(e) => {
@@ -29,7 +29,7 @@ const Body = () => {
 
         <button className="search-btn" onClick={() => {
           const data = filterData(searchInput, restaurantlist);
-          setrestList(data);
+          setrestaurantlist(data);
 
         }}
         >Search</button>
